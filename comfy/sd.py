@@ -106,6 +106,13 @@ class CLIP:
 
         self.cond_stage_model = clip(**(params))
 
+        print("--- 🕵️‍♂️ CLIP Model Debug 🕵️‍♂️ ---")
+        print(f"[CLIP] Passed 'clip' class: {clip}")
+        print(f"[CLIP] Instantiated 'self.cond_stage_model' type: {type(self.cond_stage_model)}")
+        print(f"[CLIP] Model object details: {self.cond_stage_model}")
+        print("------------------------------------")
+        # ----------------------------------------
+
         for dt in self.cond_stage_model.dtypes:
             if not model_management.supports_cast(load_device, dt):
                 load_device = offload_device
